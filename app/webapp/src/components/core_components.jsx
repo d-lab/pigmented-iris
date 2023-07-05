@@ -7,6 +7,7 @@
  */
 
 import React from "react";
+import CrowdComponent from "./crowd-component.jsx";
 
 function OnboardingComponent({ onSubmit }) {
   return (
@@ -62,14 +63,7 @@ function Directions({ children }) {
 
 function SimpleFrontend({ taskData, isOnboarding, onSubmit, onError }) {
   const data = { success: true };
-  return (
-    <div style={{ padding: "50px" }}>
-      <button className="btn btn-outline" onClick={() => {
-        onSubmit(data);
-      }}>Button</button>
-      Click this button to submit sample data.
-    </div>
-  );
+  return <CrowdComponent taskData={taskData} onSubmit={onSubmit} />;
 }
 
 export { LoadingScreen, SimpleFrontend as BaseFrontend, OnboardingComponent };

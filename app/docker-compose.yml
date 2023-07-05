@@ -6,8 +6,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: ["python3", "deploy.py"]
-#    command: ["sleep", "infinity"]
+#    command: ["python3", "deploy.py"]
+    command: ["sleep", "infinity"]
     ports:
       - 3000:3000
       - 3032:3032
