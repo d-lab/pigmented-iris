@@ -223,8 +223,7 @@ const CrowdComponent = ({ onSubmit, taskData }) => {
     const keypoints =
       document.querySelector("crowd-keypoint").value.keypoints ||
       document.querySelector("crowd-keypoint")._submittableValue.keypoints;
-    console.log(keypoints);
-    const submitData = keypoints;
+    const submitData = Object.fromEntries(keypoints.map((item, index) => [`item${index + 1}`, item]));
     onSubmit?.(submitData);
   };
 
