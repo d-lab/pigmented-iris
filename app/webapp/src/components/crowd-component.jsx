@@ -225,6 +225,17 @@ const CrowdComponent = ({ onSubmit, taskData }) => {
       document.querySelector("crowd-keypoint")._submittableValue.keypoints;
     const submitData = Object.fromEntries(keypoints.map((item, index) => [`item${index + 1}`, item]));
     onSubmit?.(submitData);
+
+    alert("Data submitted. This tab will close in 3 seconds");
+    const closeTab = () => {
+      window.close();
+    };
+
+    // Set a timeout to close the tab after 3 seconds
+    const timeout = setTimeout(closeTab, 3000);
+
+    // Clean up the timeout when the component is unmounted
+    return () => clearTimeout(timeout);
   };
 
   return (
