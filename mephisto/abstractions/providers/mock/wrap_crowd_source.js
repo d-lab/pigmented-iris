@@ -46,7 +46,7 @@ function getAgentRegistration() {
 
 function handleSubmitToProvider(task_data) {
   // Mock agents won't ever submit to a real provider
-  alert("The task has been submitted! Data: " + JSON.stringify(task_data));
+  window.close();
   return true;
 }
 
