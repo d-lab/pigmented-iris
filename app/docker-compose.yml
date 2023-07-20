@@ -16,4 +16,4 @@ services:
     volumes:
       - .:/mephisto/app:cached
       - ./data:/mephisto/data:cached
-      - ../mephisto:/mephisto/mephisto:cached
+#      - ../mephisto:/mephisto/mephisto:cached
