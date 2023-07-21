@@ -16,6 +16,8 @@ echo "APP_NAME: $APP_NAME"
 
 cd $REPO_DIR && git pull
 cd $REPO_DIR/app
+
+echo "Copy custom wrapper script"
 cp -r ../mephisto ./mephisto
 
 docker exec -t $(docker ps -a -q --filter ancestor="$APP_NAME" --format="{{.ID}}") bash -c 'pkill -SIGINT -f python3 && sleep 5' || true
