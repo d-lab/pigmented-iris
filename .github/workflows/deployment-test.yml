@@ -115,6 +115,6 @@ jobs:
           # execute commands
           script: >
             cd ${{ env.REPO_DIR }}; 
-            curl https://raw.githubusercontent.com/d-lab/mephisto/deployment/scripts/view-metrics.sh | bash -s -- \
+            bash ./scripts/view-metrics.sh \
               ${{ env.APP_NAME }};
 
