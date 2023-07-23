@@ -52,6 +52,3 @@ docker build -t $APP_NAME \
         --build-arg DOTNETRC="$DOTNETRC" \
         --build-arg HEROKU_API_KEY=$HEROKU_API_KEY \
         .
-
-echo "Cleaning up custom wrapper script"
-rm -rf ./mephisto

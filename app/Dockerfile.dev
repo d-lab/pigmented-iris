@@ -13,6 +13,9 @@ RUN rm -rf ./*
 # Copy your application code to /app
 COPY . .
 
+#Clear the content of /app/mephisto
+RUN rm -rf ./mephisto
+
 WORKDIR webapp
 RUN ./link_mephisto_task.sh
 WORKDIR ..
