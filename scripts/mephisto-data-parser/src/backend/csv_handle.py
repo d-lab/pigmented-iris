@@ -155,8 +155,8 @@ def GetAgentsOutput(csv_dataframe: DataFrame):
             unnested_dict = {}
             for key, value in outputs_dict.items():
                 if isinstance(value, dict):
-                    for k, v in value:
-                        unnested_dict[f"{key}.{k}"] = v
+                    for k, v in value.items():
+                        unnested_dict[f"outputs.{key}.{k}"] = v
                 else:
                     unnested_dict[f"outputs.{key}"] = value
             outputs.append(unnested_dict)
