@@ -45,17 +45,18 @@ rm $file
 
 # create a symbolic link in /etc/nginx/sites-enabled/{APP_NAME}.mephisto.aufederal2022.com with sudo permission
 # to the file in /etc/nginx/sites-available/{APP_NAME}.mephisto.aufederal2022.com
-docker exec $nginx_container_id /bin/sh -c "ln -s /etc/nginx/sites-available/${APP_NAME}.mephisto.aufederal2022.com /etc/nginx/sites-enabled/"
+
+file_path="/etc/nginx/sites-enabled/${APP_NAME}.mephisto.aufederal2022.com"
+if docker exec "$nginx_container_id" [ -e "$file_path" ]; then
+    echo "The sites-enabled exists."
+else
+    echo "The sites-enabled does not exist."
+    docker exec $nginx_container_id /bin/sh -c "ln -s /etc/nginx/sites-available/${APP_NAME}.mephisto.aufederal2022.com /etc/nginx/sites-enabled/"
+fi
 
 get_subdomain_from_filename() {
     local filename="$1"
     echo "${filename%%.*}"
-}
-
-# Check if a container with the given name is running
-is_container_running() {
-    local container_name="$1"
-    docker inspect "$container_name" >/dev/null 2>&1
 }
 
 # Remove a site from /etc/nginx/sites-available and /etc/nginx/sites-enabled inside the $nginx_container_id container
@@ -73,7 +74,10 @@ docker exec $nginx_container_id /bin/sh -c 'ls /etc/nginx/sites-available/' | wh
         subdomain=$(get_subdomain_from_filename "$site_filename")
 
         # Check if there is a running container with the same name as the subdomain
-        if ! is_container_running "$subdomain"; then
+        if docker ps | grep -q "$subdomain"; then
+            echo "The container $subdomain is running."
+        else
+            echo "The container $subdomain is not running."
             remove_site_inside_container "$site_filename"
         fi
     fi
