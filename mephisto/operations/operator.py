@@ -335,7 +335,7 @@ class Operator:
                         f"It has been greater than the set no_submission_patience of {patience} "
                         f"for {tracked_run.task_run} since the last submission, shutting this run down."
                     )
-                    tracked_run.force_shutdown = True
+                    # tracked_run.force_shutdown = True
                 if not tracked_run.force_shutdown:
                     task_run = tracked_run.task_run
                     if tracked_run.task_launcher.finished_generators is False:
