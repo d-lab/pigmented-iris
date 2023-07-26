@@ -15,6 +15,10 @@ import threading
 import json
 import time
 import asyncio
+import logging
+logger = logging.getLogger('websockets')
+logger.setLevel(logging.DEBUG)
+logger.addHandler(logging.StreamHandler())
 
 if TYPE_CHECKING:
     from websockets.client import WebSocketClientProtocol
