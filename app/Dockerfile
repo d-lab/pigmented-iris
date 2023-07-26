@@ -12,7 +12,7 @@ ARG DOTNETRC
 
 SHELL ["/bin/bash", "-c"]
 
-ADD ./mephisto /mephisto/mephisto
+COPY ./mephisto /mephisto/mephisto
 
 # Set working directory to /app
 WORKDIR /mephisto/app

@@ -15,7 +15,7 @@ services:
     environment:
       - APP_ENV=dev
     volumes:
-      - .:/mephisto/app:cached
+#      - .:/mephisto/app:cached
       - ./data:/mephisto/data:cached
-      - ../mephisto:/mephisto/mephisto:cached
-      - ../scripts:/mephisto/scripts:cached
+#      - ../mephisto:/mephisto/mephisto:cached
+#      - ../scripts:/mephisto/scripts:cached
