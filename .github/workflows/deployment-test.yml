@@ -13,8 +13,8 @@ env:
   PORT: 22
   MTURK_NAME: my_mturk_user_sandbox
   MTURK_TYPE: mturk_sandbox
-  USER_EMAIL: jaythaiduong.huynh@uq.edu.au
-  USER_NAME: jaythaiduong.huynh
+  USER_EMAIL: g.demartini@uq.edu.au
+  USER_NAME: g.demartini
   REPO_DIR: ~/${{ github.event.repository.name }}-${{ github.ref_name }}
   APP_NAME: ${{ github.event.repository.name }}-${{ github.ref_name }}
   APP_ENV: test
