@@ -6,16 +6,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    command: >
-      sh -c "../mephisto/scripts/metrics/shutdown_metrics.py || true && python3 deploy.py"
-#    command: ["sleep", "infinity"]
+#    command: >
+#      sh -c "../mephisto/scripts/metrics/shutdown_metrics.py || true && python3 deploy.py"
+    command: ["sleep", "infinity"]
     ports:
       - 3000:3000
       - 3032:3032
     environment:
       - APP_ENV=dev
     volumes:
-#      - .:/mephisto/app:cached
+      - .:/mephisto/app:cached
       - ./data:/mephisto/data:cached
-#      - ../mephisto:/mephisto/mephisto:cached
-#      - ../scripts:/mephisto/scripts:cached
+      - ../mephisto:/mephisto/mephisto:cached
+      - ../scripts:/mephisto/scripts:cached

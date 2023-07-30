@@ -13,8 +13,8 @@ env:
   PORT: 22
   MTURK_NAME: my_mturk_user
   MTURK_TYPE: mturk
-  USER_EMAIL: jaythaiduong.huynh@uq.edu.au
-  USER_NAME: jaythaiduong.huynh
+  USER_EMAIL: g.demartini@uq.edu.au
+  USER_NAME: g.demartini
   REPO_DIR: ~/${{ github.event.repository.name }}-${{ github.ref_name }}
   APP_NAME: ${{ github.event.repository.name }}-${{ github.ref_name }}
   APP_ENV: prod
@@ -58,7 +58,7 @@ jobs:
           # execute commands
           script: >
             cd ${{ env.REPO_DIR }};
-            curl https://raw.githubusercontent.com/d-lab/mephisto/deployment/scripts/build-container.sh | bash -s -- \
+            bash ./scripts/build-container.sh \
               ${{ env.REPO_DIR }} \
               ${{ env.APP_NAME }} \
               ${{ env.USER_EMAIL }} \
@@ -93,7 +93,7 @@ jobs:
               ${{ env.APP_NAME }} \
               ${{ secrets.HEROKU_API_KEY }} \
               ${{ env.APP_ENV }} \
-              "Mock task launched"\
+              "Mock task launched" \
               ${{ secrets.AWS_ACCESS_KEY_ID }} \
               ${{ secrets.AWS_SECRET_ACCESS_KEY }} ;
 
@@ -115,5 +115,5 @@ jobs:
           # execute commands
           script: >
             cd ${{ env.REPO_DIR }}; 
-            curl https://raw.githubusercontent.com/d-lab/mephisto/deployment/scripts/view-metrics.sh | bash -s -- \
+            bash ./scripts/view-metrics.sh \
               ${{ env.APP_NAME }};
