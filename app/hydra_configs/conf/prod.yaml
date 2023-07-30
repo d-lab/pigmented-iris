@@ -4,17 +4,18 @@ defaults:
   - /mephisto/architect: heroku
   - /mephisto/provider: mock
 mephisto:
+  log_level: debug
   blueprint:
-    data_json: ${task_dir}/data.json
+    data_json: ${task_dir}/image_urls.json
     task_source: ${task_dir}/webapp/build/bundle.js
     link_task_source: false
     extra_source_dir: ${task_dir}/webapp/src/static
-    units_per_assignment: 3
+    units_per_assignment: 1
   task:
     task_name: pigmented-iris-p
     task_title: "Identify the presence and location of any pigmented iris freckles in the iris image."
     task_description: "Welcome to this crowdsourcing project, where your help is needed to identify pigmented iris freckles in iris images."
     task_reward: 0.5
     task_tags: "keypoints, keypoint, point, points"
-    # We expect to be able to handle 300 concurrent tasks without issue
-    max_num_concurrent_units: 300
+    # We expect to be able to handle 3000 concurrent tasks without issue
+    max_num_concurrent_units: 3000
