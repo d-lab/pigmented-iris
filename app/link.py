@@ -12,7 +12,7 @@ def generate_html_file(num_links, worker_id, file_name, start_assignment_id=21):
 
         assignment_id = start_assignment_id
         for i in range(1, num_links + 1):
-            link = f'https://root-pigmented-iris-t-13-4a862-74a37e7113e0.herokuapp.com/?worker_id={worker_id}&assignment_id={assignment_id}'
+            link = f'https://root-pigmented-iris-p-1-e7d0de-c5d50c89deba.herokuapp.com/?worker_id={worker_id}&assignment_id={assignment_id}'
             f.write(f'        <li><a href="{link}">Task {i}</a></li>\n')
             assignment_id += 1
 
@@ -24,7 +24,7 @@ def generate_html_file(num_links, worker_id, file_name, start_assignment_id=21):
 # Set the desired number of links, worker ID, and the starting assignment ID
 num_links = 2183
 worker_id = 'x'  # Replace "x" with the actual worker ID you want to use
-starting_assignment_id = 21
+starting_assignment_id = 1
 
 # Generate the HTML file
 html_file_name = 'pigmented_iris_links.html'
