@@ -6,42 +6,42 @@
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-import React from "react";
-import CrowdComponent from "./crowd-component.jsx";
+import React from 'react';
+import CrowdComponent from './crowd-component.jsx';
 
-function OnboardingComponent({ onSubmit }) {
+function OnboardingComponent({onSubmit}) {
   return (
-    <div>
-      <Directions>
-        This component only renders if you have chosen to assign an onboarding
-        qualification for your task. Click the button to move on to the main
-        task.
-      </Directions>
-      <div
-        style={{
-          width: "100%",
-          padding: "1.5rem 0",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
-        <button
-          className="button is-success"
-          style={{ width: "fit-content", marginBottom: "0.65rem" }}
-          onClick={() => onSubmit({ success: true })}
+      <div>
+        <Directions>
+          This component only renders if you have chosen to assign an onboarding
+          qualification for your task. Click the button to move on to the main
+          task.
+        </Directions>
+        <div
+            style={{
+              width: '100%',
+              padding: '1.5rem 0',
+              display: 'flex',
+              alignItems: 'center',
+              flexDirection: 'column',
+            }}
         >
-          Move to Main Task
-        </button>
-        <button
-          className="button is-danger"
-          style={{ width: "fit-content" }}
-          onClick={() => onSubmit({ success: false })}
-        >
-          Get Blocked
-        </button>
+          <button
+              className="button is-success"
+              style={{width: 'fit-content', marginBottom: '0.65rem'}}
+              onClick={() => onSubmit({success: true})}
+          >
+            Move to Main Task
+          </button>
+          <button
+              className="button is-danger"
+              style={{width: 'fit-content'}}
+              onClick={() => onSubmit({success: false})}
+          >
+            Get Blocked
+          </button>
+        </div>
       </div>
-    </div>
   );
 }
 
@@ -49,21 +49,35 @@ function LoadingScreen() {
   return <Directions>Loading...</Directions>;
 }
 
-function Directions({ children }) {
+function Directions({children}) {
   return (
-    <section className="hero is-light" data-cy="directions-container">
-      <div className="hero-body">
-        <div className="container">
-          <p className="subtitle is-5">{children}</p>
+      <section className="hero is-light" data-cy="directions-container">
+        <div className="hero-body">
+          <div className="container">
+            <p className="subtitle is-5">{children}</p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
   );
 }
 
-function SimpleFrontend({ taskData, isOnboarding, onSubmit, onError }) {
-  const data = { success: true };
-  return <CrowdComponent taskData={taskData} onSubmit={onSubmit} />;
+function SimpleFrontend({taskData, isOnboarding, onSubmit, onError}) {
+  const data = {success: true};
+  return (
+      <>
+        <div style={{ display: 'flex', width: '100%', height: '100vh' }}>
+          <div style={{ flex: '60%', backgroundColor: 'lightblue' }}><CrowdComponent taskData={taskData} onSubmit={onSubmit}/></div>
+          <div style={{ flex: '40%', backgroundColor: 'lightblue' }}>
+            <iframe
+                src="http://mpt-chat-gpt.mephisto.aufederal2022.com?provider=mturk&workerId=123&assignmentId=222"
+                width="100%" height="100%" frameBorder="0"></iframe>
+
+          </div>
+        </div>
+      </>
+
+
+  );
 }
 
-export { LoadingScreen, SimpleFrontend as BaseFrontend, OnboardingComponent };
+export {LoadingScreen, SimpleFrontend as BaseFrontend, OnboardingComponent};
