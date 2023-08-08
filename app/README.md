@@ -1,62 +1,20 @@
-# Introduction
-This README provides an overview for the deployment flow for the project generated from https://github.com/d-lab/mephisto template.
+# Pigmented Iris Crowdsourcing Project
 
-# Prerequisites
-Before deploying, you must set the following variables/secrets in your Github Actions environment:
+Welcome to the Pigmented Iris Crowdsourcing repository! This project aims to leverage the power of crowd workers to identify and annotate pigmented points within iris images. The repository is built upon the Mephisto platform, which allows for efficient management and execution of crowdsourcing tasks. This README will guide you through setting up and deploying the project using GitHub Actions.
 
-- DOTNETRC (Heroku .netrc file content with "" wrapped)
-- HEROKU_API_KEY (Heroku API key)
-- MTURK_ACCESS_KEY_ID (Mturk access key)
-- MTURK_SECRET_ACCESS_KEY (Mturk secret key)
-- PRIVATE_KEY (Private key for ssh access)
-- AWS_ACCESS_KEY_ID (Key for uploading data to S3)
-- AWS_SECRET_ACCESS_KEY (Key for uploading data to S3)
+## Table of Contents
 
-You also need to install the following tools:
-- Docker (Desktop)
+- [Introduction](#introduction)
+- [Running the Crowdsourcing Task](#running-the-crowdsourcing-task)
+- [Contributing](#contributing)
+- [License](#license)
 
-# Notes
-Please read the below notes carefully before starting your work:
+## Introduction
 
-- The practical deployment flow: local -> test -> prod
-  - branch `deployment-test` for test/staging env
-  - branch `deployment-prod` for production env 
+The human iris is a complex structure that can exhibit various patterns and pigmented points. This project aims to crowdsource the identification and annotation of pigmented points within iris images. Crowd workers will be presented with iris images and will be asked to mark the points they identify as pigmented. The aggregated results will contribute to a dataset for further analysis and research.
 
-- Refer to https://mephisto.ai/docs/guides/tutorials/first_task/ for other configuration details
+The project is built upon the Mephisto platform, which streamlines the process of managing, launching, and collecting data from crowdsourcing tasks.
 
-- Please ensure that you have changed the taskname in hydra_config in test.yml and prod.yml. 
-Note that Heroku app names for each cannot be duplicated and cannot exceed 30 characters ().
-- There are some configs in hydra_config that are very sensitive and related to cost.
-Please discuss with your manager before changing them.
-  - `units_per_assignment`: number of units per assignment
-  - `task_reward`: reward per unit
+## Running the Crowdsourcing Task
 
-# How to start
-1. Create a new repo from d-lab/mephisto template with `deployment` branch
-2. Clone the new repo to your local machine
-3. Switch to the `deployment` branch
-
-## How to configure environment variables in github actions
-1. You must be the owner of the repo to configure the environment variables
-2. Go to Settings -> Secrets and variables -> Actions
-3. New repository secret
-
-## Local Deployment
-1. Start from the `deployment` branch
-2. cd to `app` directory
-3. Run `make run` to start the local server
-4. Run `make watch` to build and watch the frontend
-5. Start implementing your task in webapp/src
-
-## Test Deployment
-1. Once you are happy with your local version.
-2. Make sure to config the hydra_config in **test.yml** and environment variables in github actions
-3. Create a new branch from your current `deployment` branch and name it `deployment-test`
-4. Push your changes to `deployment-test` branch to remote
-5. View your deployment status in github actions
-
-## Production Deployment
-1. Make sure to config the hydra_config in **prod.yml** and environment variables in github actions
-2. Create a new branch from your current `deployment` branch and name it `deployment-prod`
-3. Push your changes to `deployment-prod` branch to remote
-4. Check github actions log for the deployment status and the production path to access the task
+Follow the instruction in /app/README.md to run the crowdsourcing task.
