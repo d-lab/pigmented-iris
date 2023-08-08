@@ -1,43 +1,20 @@
-<p align="center">
- <h1>
-  <img width="250px" src="docs/web/static/img/logo.svg" alt="Mephisto" />
- </h1>
-</p>
+# Pigmented Iris Crowdsourcing Project
 
-[![code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+Welcome to the Pigmented Iris Crowdsourcing repository! This project aims to leverage the power of crowd workers to identify and annotate pigmented points within iris images. The repository is built upon the Mephisto platform, which allows for efficient management and execution of crowdsourcing tasks. This README will guide you through setting up and deploying the project using GitHub Actions.
 
-Mephisto makes crowdsourcing easier.
+## Table of Contents
 
-We provide a platform for launching, monitoring, and reviewing your crowdsourcing tasks. Tasks made on Mephisto can easily be open sourced as part of other projects. Like the [chess-playing automaton](https://en.wikipedia.org/wiki/Mephisto_(automaton)) we've adopted the name from, Mephisto hides the complexity of projects that need human interaction or input.
+- [Introduction](#introduction)
+- [Running the Crowdsourcing Task](#running-the-crowdsourcing-task)
+- [Contributing](#contributing)
+- [License](#license)
 
-You can find complete details about the project on our [docs website](https://mephisto.ai).
+## Introduction
 
-## Quickstart
+The human iris is a complex structure that can exhibit various patterns and pigmented points. This project aims to crowdsource the identification and annotation of pigmented points within iris images. Crowd workers will be presented with iris images and will be asked to mark the points they identify as pigmented. The aggregated results will contribute to a dataset for further analysis and research.
 
-[Get started in 10 minutes](https://mephisto.ai/docs/guides/quickstart)
+The project is built upon the Mephisto platform, which streamlines the process of managing, launching, and collecting data from crowdsourcing tasks.
 
-## Want to help?
+## Running the Crowdsourcing Task
 
-Check out our [guidelines for contributing](https://github.com/facebookresearch/Mephisto/blob/main/CONTRIBUTING.md) and then take a look at some of our tagged issues: [good first issue](https://github.com/facebookresearch/Mephisto/labels/good%20first%20issue), [help wanted](https://github.com/facebookresearch/Mephisto/labels/help%20wanted).
-
-For library authors, you may also find the [how to contribute](https://mephisto.ai/docs/guides/how_to_contribute/getting_started) documentation helpful.
-
-
-## License
-Mephisto is MIT licensed. See the LICENSE file for details.
-
-## Citation
-If you use Mephisto in your work, please consider citing the project. It helps us prioritize features based on our users, and helps others discover implementations that may be relevant to their projects.
-```bibtex
-@misc{mephisto,
-  doi = {10.48550/ARXIV.2301.05154},
-  url = {https://arxiv.org/abs/2301.05154},
-  author = {Urbanek, Jack and Ringshia, Pratik},
-  keywords = {Artificial Intelligence (cs.AI), Human-Computer Interaction (cs.HC), FOS: Computer and information sciences, FOS: Computer and information sciences},
-  title = {Mephisto: A Framework for Portable, Reproducible, and Iterative Crowdsourcing},
-  publisher = {arXiv},
-  year = {2023},
-  copyright = {arXiv.org perpetual, non-exclusive license}
-}
-```
+Follow the instruction in /app/README.md to run the crowdsourcing task.
