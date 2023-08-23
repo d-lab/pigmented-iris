@@ -1,4 +1,4 @@
-FROM jayhuynh239/mephisto-uq:latest
+FROM jayhuynh239/mephisto-uq:0.1.24
 
 SHELL ["/bin/bash", "-c"]
 
