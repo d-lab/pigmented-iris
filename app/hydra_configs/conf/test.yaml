@@ -13,7 +13,7 @@ mephisto:
     units_per_assignment: 2
   task:
     task_name: pigmented-iris-t
-    task_title: "Identify the presence and location of any pigmented iris freckles in the iris image."
+    task_title: "Identify the presenc and location of any pigmented iris freckles in the iris image."
     task_description: "Welcome to this crowdsourcing project, where your help is needed to identify pigmented iris freckles in iris images."
     task_reward: 0.5
     task_tags: "keypoints, keypoint, point, points"
