@@ -17,5 +17,5 @@ mephisto:
     task_description: "Welcome to this crowdsourcing project, where your help is needed to identify pigmented iris freckles in iris images."
     task_reward: 0.5
     task_tags: "keypoints, keypoint, point, points"
-    # We expect to be able to handle 3000 concurrent tasks without issue
-    max_num_concurrent_units: 3000
+    # We expect to be able to handle 10000 concurrent tasks without issue
+    max_num_concurrent_units: 10000
