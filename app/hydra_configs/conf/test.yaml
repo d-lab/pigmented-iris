@@ -10,7 +10,7 @@ mephisto:
     task_source: ${task_dir}/webapp/build/bundle.js
     link_task_source: false
     extra_source_dir: ${task_dir}/webapp/src/static
-    units_per_assignment: 2
+    units_per_assignment: 1
   task:
     task_name: pigmented-iris-t
     task_title: "Identify the presence and location of any pigmented iris freckles in the iris image."
