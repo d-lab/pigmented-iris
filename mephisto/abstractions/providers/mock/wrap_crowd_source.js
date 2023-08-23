@@ -46,7 +46,7 @@ function getAgentRegistration() {
 
 function handleSubmitToProvider(task_data) {
   // Mock agents won't ever submit to a real provider
-  window.close();
+  alert("Your task has been submitted. You can now close this tab now.");
   return true;
 }
 
