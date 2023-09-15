@@ -25,7 +25,7 @@ fi
 mkdir -p ~/logs/$APP_NAME/;
 
 docker logs $container_id
-sleep 10
+sleep 100
 LOG_FILE="~/logs/$APP_NAME/$container_id-$(date +%s).log";
 echo "Streaming logs from container $container_id to file $LOG_FILE";
 DOCKER_LOGS=$(docker inspect --format='{{.LogPath}}' $container_id);
