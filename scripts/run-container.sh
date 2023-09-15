@@ -24,8 +24,10 @@ fi
 
 mkdir -p ~/logs/$APP_NAME/;
 
-echo "Streaming logs from container $container_id to file ~/logs/$APP_NAME/$container_id-$(date +%s).log";
-nohup docker logs -f $container_id > ~/logs/$APP_NAME/$container_id-$(date +%s).log &
+LOG_FILE="~/logs/$APP_NAME/$container_id-$(date +%s).log"
+echo "Streaming logs from container $container_id to file $LOG_FILE";
+DOCKER_LOGS=$(docker inspect --format='{{.LogPath}}' $container_id
+ln $DOCKER_LOGS $LOG_FILE
 
 echo "Waiting for MTurk preview URL: ";
 timeout 1800 \
