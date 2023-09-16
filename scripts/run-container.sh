@@ -1,3 +1,5 @@
+#!/bin/bash
+
 APP_NAME=${1:?"Specify 'APP_NAME' as argv[1]"}
 HEROKU_API_KEY=${2:?"Specify 'HEROKU_API_KEY' as argv[2]"}
 APP_ENV=${3:?"Specify 'APP_ENV' as argv[3]"}
@@ -24,6 +26,7 @@ fi
 
 mkdir -p ~/logs/$APP_NAME/;
 
+pwd
 LOG_FILE="~/logs/$APP_NAME/$container_id-$(date +%s).log";
 echo "Streaming logs from container $container_id to file $LOG_FILE";
 DOCKER_LOGS=$(docker inspect --format='{{.LogPath}}' $container_id);
