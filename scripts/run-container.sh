@@ -26,8 +26,7 @@ fi
 
 mkdir -p ~/logs/$APP_NAME/;
 
-pwd
-LOG_FILE="~/logs/$APP_NAME/$container_id-$(date +%s).log";
+LOG_FILE="$HOME/logs/$APP_NAME/$container_id-$(date +%s).log";
 echo "Streaming logs from container $container_id to file $LOG_FILE";
 DOCKER_LOGS=$(docker inspect --format='{{.LogPath}}' $container_id);
 echo "Running sudo ln $DOCKER_LOGS $LOG_FILE";
